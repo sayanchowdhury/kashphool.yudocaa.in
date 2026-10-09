@@ -1,0 +1,16 @@
+{
+  "name": "Kashful — Mahalaya Live Radio",
+  "short_name": "Kashful",
+  "description": "Mahalaya live radio, a vintage tuning-dial player, Durga Puja songs and a live countdown to Pujo.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#140f2e",
+  "theme_color": "#140f2e",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
