@@ -7,11 +7,15 @@ import { initPlaylists } from './playlists.js';
 import { initChecklist } from './checklist.js';
 import { initGreetingCard } from './greeting-card.js';
 import { initReminder } from './reminder.js';
+import { initAutoStart } from './autostart.js';
 import { startDhak, stopDhak } from './dhak.js';
 import { showToast } from './store.js';
 
-// show a station as selected in the UI without starting playback
-// (autoplay is blocked by browsers anyway — the visitor presses play).
+// show a station as selected in the UI without starting playback on load
+// (an uninvited autoplay would be blocked by the browser anyway — the
+// visitor presses play, or opts into the Schedule section's auto-start
+// toggle, whose own click counts as the user gesture that lets the later
+// timed play() call through).
 setState({ mode: 'station', stationId: DEFAULT_STATION_ID });
 
 initDial();
@@ -21,6 +25,7 @@ initPlaylists();
 initChecklist();
 initGreetingCard();
 initReminder();
+initAutoStart();
 
 const dhakBtn = document.getElementById('dhakBtn');
 dhakBtn.addEventListener('click', () => {

@@ -36,6 +36,10 @@ export async function toggleReminder() {
   const turningOn = localStorage.getItem(KEY) !== '1';
   if (turningOn) {
     let perm = Notification.permission;
+    if (perm === 'denied') {
+      showToast('Notifications are blocked for this site — enable them in your browser’s site settings, then try again');
+      return;
+    }
     if (perm === 'default') perm = await Notification.requestPermission();
     if (perm !== 'granted') { showToast('Notification permission was not granted'); return; }
     localStorage.setItem(KEY, '1');
